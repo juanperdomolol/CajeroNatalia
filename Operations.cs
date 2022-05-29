@@ -8,7 +8,7 @@ namespace CajeroNatalia
 {
      class Operations
     {
-        int Ammount, Points, SelectOption;
+        int  SelectOption;
         DbValidation validation = new DbValidation();
 
         public void MenuOptions(int userName)
@@ -72,14 +72,13 @@ namespace CajeroNatalia
         }
         private void Withdrawals(int userName)
         {
-            int option;
             Console.WriteLine("How much do you  want to withdrwals");
             Console.WriteLine("1. $20.000");
             Console.WriteLine("2. $50.000");
             Console.WriteLine("3. $100.000");
             Console.WriteLine("4. $500.000");
-            option = int.Parse(Console.ReadLine());
-            switch (option)
+            SelectOption = int.Parse(Console.ReadLine());
+            switch (SelectOption)
             {
                 case 1: 
                     if (20000 <= validation.ammount[userName] && validation.DailyAmmount <=2000000)
@@ -148,14 +147,13 @@ namespace CajeroNatalia
         }
         private void ValidUser (int UserName, int validation1)
         {
-            int option;
             Console.WriteLine("Valid user, how much do you want to transfer?");
             Console.WriteLine("1. 20.000");
             Console.WriteLine("2. 50.000");
             Console.WriteLine("3. 100.000");
             Console.WriteLine("4. 500.000");
-            option = int.Parse(Console.ReadLine());
-            switch (option)
+            SelectOption = int.Parse(Console.ReadLine());
+            switch (SelectOption)
             {
                 case 1:
                     if (20000 <= validation.ammount[UserName])
